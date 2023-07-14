@@ -1,0 +1,95 @@
+.tudo{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    margin-top: .8rem;
+}
+
+
+.menu{
+    display: flex;
+    font-size: 15px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    gap: 10rem;
+    
+
+}
+
+.menu__title{
+    font-size: 24px;
+    animation: cambio-color 10s linear infinite;
+    border-radius: 1rem;
+    padding: .1rem;
+
+}
+@keyframes cambio-color {
+    0% { color: rgb(233, 112, 112); }
+    25% { color: rgb(83, 83, 228); }
+    50% { color: rgb(90, 180, 90); }
+    75% { color: rgb(208, 208, 106); }
+    100% { color: rgb(198, 65, 210); }
+}
+
+
+.menu__list{
+    display: flex;
+
+
+}
+
+.menu__list__item{
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(255, 255, 255, 0.781);
+    --enhanced-glow-color: rgb(0, 0, 0);
+    --btn-color: rgb(0, 0, 0);
+    border: .25em solid var(--glow-color);
+    padding: .3em .8em;
+    margin-right: 1.5rem;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 .1em .1em var(--glow-color),
+        0 0 16em 1em var(--glow-spread-color),
+        inset 0 0 .2em .2em var(--glow-color);
+    text-shadow: 0 0 .2em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    place-self: center;
+
+}
+
+.menu__list__item:after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(.5, .3);
+
+}
+
+.menu__list__item:hover {
+    color: black;
+    background-color: var(--glow-spread-color);
+    box-shadow: 0 0 1em .25em black
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .5em .5em var(--glow-color);
+}
+
+.menu__list__item:active {
+    box-shadow: 0 0 0.6em .25em black,
+        0 0 2.5em 2em black
+        inset 0 0 .5em .5em var(--glow-spread-color);
+}
